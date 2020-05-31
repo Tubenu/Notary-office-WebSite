@@ -1,0 +1,189 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Kanca</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/css/flaticon.css">
+    <link rel="stylesheet" href="~/fonts/flaticon.css">
+    <link rel="stylesheet" href="~/Content/css/themify-icons.css">
+    <link rel="stylesheet" href="~/fonts/_flaticon.scss">
+    <link rel="stylesheet" href="~/Content/css/gijgo.css">
+    <link rel="stylesheet" href="~/Content/css/slicknav.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    @Styles.Render("~/template/css")
+    <script src="~Scripts/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~Scripts/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~Scripts/popper.min.js"></script>
+    <script src="~Scripts/bootstrap.min.js"></script>
+    <script src="~Scripts/owl.carousel.min.js"></script>
+    <script src="~Scripts/isotope.pkgd.min.js"></script>
+    <script src="~Scripts/ajax-form.js"></script>
+    <script src="~Scripts/waypoints.min.js"></script>
+    <script src="~Scripts/jquery.counterup.min.js"></script>
+    <script src="~Scripts/imagesloaded.pkgd.min.js"></script>
+    <script src="~Scripts/scrollIt.js"></script>
+    <script src="~Scripts/jquery.scrollUp.min.js"></script>
+    <script src="~Scripts/wow.min.js"></script>
+    <script src="~Scripts/nice-select.min.js"></script>
+    <script src="~Scripts/gijgo.min.js"></script>
+    <script src="~Scripts/jquery.slicknav.min.js"></script>
+    <script src="~Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~Scripts/plugins.js"></script>
+    <script src="~Scripts/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinyMCE.init({
+            mode: "specific_textareas",
+            editor_selector: "editorHtml",
+        });
+    </script>
+    <script src="~Scripts/contact.js"></script>
+    <script src="~Scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="~Scripts/jquery.form.js"></script>
+    <script src="~Scripts/jquery.validate.min.js"></script>
+    <script src="~Scripts/mail-script.js"></script>
+    <script src="~Scripts/main.js"></script>
+    @Scripts.Render("~/template/js")
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+    
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+        var timepicker = $('#timepicker').timepicker({
+            format: 'HH.MM'
+        });</script>
+</head>
+<body>
+
+    <header style="margin-top:-50px;position :relative">
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center justify-content-between no-gutters">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a href="@Url.Action("Index","Home")">
+                                    <img src="~/Content/img/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-8">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="@Url.Action("Index","Home")">Strona Główna</a></li>
+                                        <li><a href="@Url.Action("Kalkulator","Home")">Kalkulator czynności</a></li>
+                                     
+                                     
+                                        <li>
+                                            <a href="#">Dla klienta</a>
+                                            <ul class="submenu">
+                                                <li><a href="@Url.Action("Download","Home")">Do pobrania</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="@Url.Action("Contact","Home")">Kontakt</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-2 d-none d-lg-block">
+                            <div class="social_media_links">
+                      
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+
+    <footer class="footer">
+
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="footer_logo">
+                        <img src="~/Content/img/logo.png">&emsp;&emsp;&emsp;&emsp;
+                        <p class="footer_text">
+                            @Html.Raw(HttpContext.Current.Session["footer_text"])
+                            </p>
+                        <p class="footer_text">
+                            <a class="domain" href="@Url.Action("Contact","Home")" style="opacity: 1">kancelaria.notarialna.test@gmail.com</a>
+                        </p>
+                    </div>
+
+
+                    <div class="col-xl-3 col-md-6 col-lg-2">
+
+
+
+                        <div class="footer_widget">
+
+                            <h2 style="color: white;font-size: 30px;padding-top:15px">
+                                Przydatne Strony
+                            </h2>
+                            <ul>
+                                <li> <a href="http://www.notariusze.lodz.pl/">Izba Notarialna w Łodzi</a> </li>
+                                <li> <a href="http://www.krn.org.pl">Krajowa Rada Notarialna</a></li>
+                                <li><a href="https://ekw.ms.gov.pl/eukw_ogol/menu.do">Centralna Baza Ksiąg Wieczystych</a></li>
+                                <li><a href="https://ems.ms.gov.pl/">Elektroniczny KRS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    &emsp;
+                    <div class="col-xl-4 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title"></h3>
+                            <ul>
+                                <li><a href="https://rejestry-notarialne.pl/">Rejestr Aktów Poświadczenia Dziedziczenia</a></li>
+                                <li><a href="https://www.gov.pl/web/sprawiedliwosc">Ministerstwo Sprawiedliwości</a></li>
+                                <li><a href="http://isap.sejm.gov.pl/"> Internetowy System Aktów Prawnych</a></li>
+                                <li><a href="https://e-justice.europa.eu/home.do?action=home&plang=pl"> Europejski portal e-sprawiedliwość</a></li>
+                            </ul>
+                        </div>
+                    </div>
+           
+                </div>
+
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

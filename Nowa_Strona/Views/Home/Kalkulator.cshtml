@@ -1,0 +1,70 @@
+﻿@model Nowa_Strona.Models.ViewModels.KalkulatorViewModel
+
+<div class="bradcam_area">
+    <div class="bradcam_inner bradcam_bg d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Tutaj możesz sprawdzić koszt czynności notarialnych </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="sample-text-area">
+
+
+    @using (@Html.BeginForm())
+    {
+
+        @Html.DropDownListFor(x => x.ChoosedValue, (SelectList)ViewBag.CalcItems, "Wybierz Czynność", new { style = "margin-left: 200px; width:1000px;height:40px;font-size:18px;" })
+
+
+        @Html.TextBoxFor(x => x.Cena, new { @type = "number", @placeholder = "Wpisz wartość w zł", @style = "margin-left: 10px; width: 200px;height:40px;font-size:18px" })
+
+
+        <button type="Submit" class="button-group-area" style="margin-left: 10px; width: 75px;height:40px;font-size:18px">Oblicz</button>
+     
+    }
+
+    <p class="h1" style="margin-left: 200px;">
+        <table class="h1" style="margin-left: 200px;">
+
+            <tr>
+                <th>Nazwa</th>
+                <th>Opłata</th>
+            </tr>
+            <tr>
+                <td>Taksa notarialna</td>
+                <td>@Model.Result.TaksaResult</td>
+            </tr>
+            <tr>
+                <td>Podatek od czynności cywilnoprawnych</td>
+                <td>@Model.Result.PCC</td>
+            </tr>
+            <tr>
+                <td>Opłata za złożenie wniosku wieczystoksięgowego&nbsp;&nbsp;&nbsp;</td>
+                <td>@(Model.Result.OplataWniosekWieczystoksiegowy)</td>
+            </tr>
+            <tr>
+                <td>Wniosek wieczystoksięgowy</td>
+                <td>@Model.Result.WniosekWieczystoksiegowy</td>
+            </tr>
+            <tr>
+                <td>Kwota końcowa</td>
+                <td>@Model.Result.KwotaKoncowa</td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+        <h6 style="margin-left: 200px;color:grey">* Otrzymany wynik to dane poglądowe. Po więcej informacji zapraszamy do Kancelarii.</h6>
+        <h6 style="margin-left: 200px;color:grey"> ** Do każdej czynności należy doliczyć ilość wypisów (1 strona = 6 zł).</h6>
+    </p>
+
+    @*</div>*@
+</section>
+

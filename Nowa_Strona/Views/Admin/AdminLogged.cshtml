@@ -1,0 +1,25 @@
+﻿@model Nowa_Strona.Models.ViewModels.EditorViewModel
+@{
+    ViewBag.Title = "AdminLogged";
+    Layout = "~/Views/Shared/Main_View.cshtml";
+    Session.Abandon();
+}
+<script>
+
+    tinymce.init({
+        selector: "#TextField"
+    });
+
+</script>
+
+
+
+@using (Html.BeginForm())
+{
+
+    <br />
+    <center>@Html.EditorFor(m => m.TextField)</center>
+    <br />
+
+}
+

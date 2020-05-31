@@ -1,0 +1,16 @@
+﻿@model Nowa_Strona.Models.AdminLogin
+
+
+<center><h2>Panel Admina</h2></center>
+
+@using (Html.BeginForm())
+{  <center>
+    <br /> @Html.PasswordFor(model => model.Login)
+    <br />
+    <br /> @Html.PasswordFor(model => model.Pass)
+    <br />
+    <br /><button type="Submit" class="btn">Zaloguj się</button>
+    <br />
+</center>
+}
+<br />
